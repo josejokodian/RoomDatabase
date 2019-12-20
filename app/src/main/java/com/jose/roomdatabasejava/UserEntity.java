@@ -20,6 +20,11 @@ public class UserEntity {
         this.uName = uName;
         this.uEmail = uEmail;
     }
+
+    public UserEntity() {
+
+    }
+
     public int getuId() {
         return uId;
     }

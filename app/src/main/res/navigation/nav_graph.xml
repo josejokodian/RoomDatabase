@@ -13,10 +13,26 @@
         <action
             android:id="@+id/action_fragmentDatabaseUI_to_addUserFragment"
             app:destination="@id/addUserFragment" />
+        <action
+            android:id="@+id/action_fragmentDatabaseUI_to_fragmentViewUser"
+            app:destination="@id/fragmentViewUser" />
+        <action
+            android:id="@+id/action_fragmentDatabaseUI_to_fragmentUpdateUser"
+            app:destination="@id/fragmentUpdateUser" />
     </fragment>
     <fragment
         android:id="@+id/addUserFragment"
         android:name="com.jose.roomdatabasejava.AddUserFragment"
         android:label="fragment_add_user"
         tools:layout="@layout/fragment_add_user" />
+    <fragment
+        android:id="@+id/fragmentViewUser"
+        android:name="com.jose.roomdatabasejava.FragmentViewUser"
+        android:label="fragment_fragment_view_user"
+        tools:layout="@layout/fragment_fragment_view_user" />
+    <fragment
+        android:id="@+id/fragmentUpdateUser"
+        android:name="com.jose.roomdatabasejava.FragmentUpdateUser"
+        android:label="fragment_fragment_update_user"
+        tools:layout="@layout/fragment_fragment_update_user" />
 </navigation>

@@ -65,15 +65,13 @@ public class FragmentDatabaseUI extends Fragment implements View.OnClickListener
                 break;
             case R.id.btnDeleteUser:
                 customViewModel.setmName("DeleteUser");
-                navController.navigate(R.id.action_fragmentDatabaseUI_to_addUserFragment);
                 break;
             case R.id.btnViewUser:
-                customViewModel.setmName("ViewUser");
-                navController.navigate(R.id.action_fragmentDatabaseUI_to_addUserFragment);
+                navController.navigate(R.id.action_fragmentDatabaseUI_to_fragmentViewUser);
                 break;
             case R.id.btnUpdateUser:
                 customViewModel.setmName("UpdateUser");
-                navController.navigate(R.id.action_fragmentDatabaseUI_to_addUserFragment);
+                navController.navigate(R.id.action_fragmentDatabaseUI_to_fragmentUpdateUser);
                 break;
 
         }
