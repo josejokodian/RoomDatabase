@@ -1,12 +1,10 @@
-package com.jose.roomdatabasejava;
+package com.jose.roomdatabasejava.Fragments;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -16,6 +14,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.jose.roomdatabasejava.MainActivity;
+import com.jose.roomdatabasejava.R;
+import com.jose.roomdatabasejava.Database.UserEntity;
 
 
 public class AddUserFragment extends Fragment implements View.OnClickListener{
@@ -65,11 +67,10 @@ public class AddUserFragment extends Fragment implements View.OnClickListener{
               //  customViewModel.setmEmail(edit_UserEmail.getText().toString());
                 String username=edit_UserName.getText().toString();
                 String useremail=edit_UserEmail.getText().toString();
-                userEntity=new UserEntity();
-                userEntity.setuName(username);
-                userEntity.setuEmail(useremail);
+                userEntity=new UserEntity(username);
+               // userEntity.setuEmail(useremail);
                 //adding data to the table
-                MainActivity.userDatabase.userDAO().addUser(userEntity);
+                MainActivity.customViewModel.insert(userEntity);
                 Toast.makeText(getActivity(), "User Added", Toast.LENGTH_SHORT).show();
                 break;
         }

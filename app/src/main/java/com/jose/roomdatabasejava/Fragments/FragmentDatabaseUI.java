@@ -1,4 +1,4 @@
-package com.jose.roomdatabasejava;
+package com.jose.roomdatabasejava.Fragments;
 
 
 import android.os.Bundle;
@@ -14,6 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.jose.roomdatabasejava.Model.CustomViewModel;
+import com.jose.roomdatabasejava.R;
 
 
 /**
@@ -31,7 +34,6 @@ public class FragmentDatabaseUI extends Fragment implements View.OnClickListener
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        customViewModel = ViewModelProviders.of(requireActivity()).get(CustomViewModel.class);
     }
 
     @Override
@@ -60,17 +62,14 @@ public class FragmentDatabaseUI extends Fragment implements View.OnClickListener
 
         switch (v.getId()){
             case R.id.btnAddUser:
-                customViewModel.setmName("AddUser");
                 navController.navigate(R.id.action_fragmentDatabaseUI_to_addUserFragment);
                 break;
             case R.id.btnDeleteUser:
-                customViewModel.setmName("DeleteUser");
                 break;
             case R.id.btnViewUser:
                 navController.navigate(R.id.action_fragmentDatabaseUI_to_fragmentViewUser);
                 break;
             case R.id.btnUpdateUser:
-                customViewModel.setmName("UpdateUser");
                 navController.navigate(R.id.action_fragmentDatabaseUI_to_fragmentUpdateUser);
                 break;
 

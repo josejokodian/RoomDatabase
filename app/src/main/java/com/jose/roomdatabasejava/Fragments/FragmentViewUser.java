@@ -1,4 +1,4 @@
-package com.jose.roomdatabasejava;
+package com.jose.roomdatabasejava.Fragments;
 
 
 import android.os.Bundle;
@@ -12,14 +12,22 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.jose.roomdatabasejava.Database.UserEntity;
+import com.jose.roomdatabasejava.MainActivity;
+import com.jose.roomdatabasejava.R;
+
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentViewUser extends Fragment {
+public class FragmentViewUser extends Fragment  {
 
     NavController navController=null;
+    TextView textUserName,textUserEmail;
 
     public FragmentViewUser() {
         // Required empty public constructor
@@ -37,5 +45,20 @@ public class FragmentViewUser extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
+
+        textUserName= view.findViewById(R.id.textUserName);
+        textUserEmail= view.findViewById(R.id.textUserEmail);
+
+        List<UserEntity> userslist = MainActivity.userDatabase.userDAO().getUser();
+        String userdetails="";
+
+        for(UserEntity userEntity : userslist){
+            String name = userEntity.getuName();
+            String email = userEntity.getuEmail();
+            userdetails = name+"\n"+email+"\n";
+        }
+        textUserEmail.setText(userdetails);
     }
+
+
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentDatabaseUI"
-        android:name="com.jose.roomdatabasejava.FragmentDatabaseUI"
+        android:name="com.jose.roomdatabasejava.Fragments.FragmentDatabaseUI"
         android:label="fragment_fragment_database_ui"
         tools:layout="@layout/fragment_fragment_database_ui" >
         <action
@@ -22,17 +22,17 @@
     </fragment>
     <fragment
         android:id="@+id/addUserFragment"
-        android:name="com.jose.roomdatabasejava.AddUserFragment"
+        android:name="com.jose.roomdatabasejava.Fragments.AddUserFragment"
         android:label="fragment_add_user"
         tools:layout="@layout/fragment_add_user" />
     <fragment
         android:id="@+id/fragmentViewUser"
-        android:name="com.jose.roomdatabasejava.FragmentViewUser"
+        android:name="com.jose.roomdatabasejava.Fragments.FragmentViewUser"
         android:label="fragment_fragment_view_user"
         tools:layout="@layout/fragment_fragment_view_user" />
     <fragment
         android:id="@+id/fragmentUpdateUser"
-        android:name="com.jose.roomdatabasejava.FragmentUpdateUser"
+        android:name="com.jose.roomdatabasejava.Fragments.FragmentUpdateUser"
         android:label="fragment_fragment_update_user"
         tools:layout="@layout/fragment_fragment_update_user" />
 </navigation>
